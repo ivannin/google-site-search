@@ -1,0 +1,57 @@
+/**
+ * Пример CSS файла вывода резульаттов поиска на сайте www.gabris.ru
+ *
+ */
+@charset "UTF-8";
+.searchResultItem
+{
+	clear: both;
+	margin-bottom: 40px;
+}
+
+/* Вывод сниппета */
+.searchResultItem .snippet
+{
+	margin-left: 80px;
+	font-size: 90%;	
+}
+
+
+/* Фото товара */
+.searchResultItem .photo
+{
+	width: 70px;
+	height: 110px;
+	float: left; 
+	background-repeat: no-repeat;
+} 
+
+/* Хлебные крошки */
+.searchResultItem .url, .searchResultItem .url a
+{
+	font-size: 90%;
+	color: green !important;
+}
+
+/* Цены */
+.searchResultItem .price
+{
+	font-weight: bold;
+}
+
+/* Страницы внизу */
+.searchResult .paging
+{
+	text-align: center;
+}
+
+.searchResult .paging a
+{
+	padding: 10px;
+	margin: 10px;
+}
+
+.searchResult .paging a.current
+{
+	background-color: #ddd;
+}
