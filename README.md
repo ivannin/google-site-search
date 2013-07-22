@@ -15,14 +15,16 @@ http://www.google.ru/cse/setup/basic
 Подключите к своей странице файл google-site-search.php с помощью функции require()
 На самой странице поиска впишите следующий код:
 
+```php
 require($_SERVER["DOCUMENT_ROOT"]."/search/gss/google-site-search.php");
 $search = new GSS(array(
- 'cseID'   => '010715444785431631581:ec-hohtyejs',
+ 'cseID'   => '******************',
  'cacheFolder' => $_SERVER["DOCUMENT_ROOT"].'../cache/',
  'logFolder'  => FALSE, 
  'encoding'  => 'windows-1251', 
 ));
 echo $search->query();
+```
 
 Ассоциативный массив с параметрами может принимать следующие значения:
 *  cseID  => обязательно. идентификатор поисковой системы
