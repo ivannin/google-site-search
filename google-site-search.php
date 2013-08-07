@@ -9,7 +9,7 @@
  */
 class GSS
 {
-/* ----------------- Константы и настройки GSS ----------------- */
+/* ----------------- Константы и настройки GSS ----------------- */ 
 	
 	/**
 	 * Параметр запроса поиска по умолчанию
@@ -154,6 +154,7 @@ class GSS
 	 */
 	public function __construct($params)
 	{
+		
 		// Если параметр строка, то это cseID
 		if (is_string($params))
 			$this->cseID = $params;
@@ -170,13 +171,15 @@ class GSS
 		$this->cacheTime = (isset($params['cacheTime'])) ? $params['cacheTime'] : self::CACHE_DEFAULT;
 		$this->xslFile = (isset($params['xslFile'])) ? $params['xslFile'] : __DIR__ . '/' . self::XSL_FILE;
 
+		$this->log(date('d.m.Y H:i:s') . ' Инициализация');
+		$this->log('Начальные свойства: ' . var_export($this, TRUE));
+		
 		// Проверка обязательных или критичных параметров
 		if (empty($this->cseID))
 			throw new Exception('Parameter cseID must be specified!');
 		if (!file_exists($this->xslFile))
 			throw new Exception('XSL file ' . $this->xslFile . ' not found!');			
 		
-		$this->log(date('d.m.Y H:i:s') . ' Инициализация');
 	}
 	
 	/**
@@ -194,9 +197,10 @@ class GSS
 	 */
 	protected function log($message)	
 	{
+		
 		if (empty($this->logFolder)) return;
 		$logFile = $this->logFolder . __CLASS__ . '.log';
-		file_put_contents($logFile, $message . PHP_EOL, FILE_APPEND);
+		file_put_contents($logFile, $this->encode($message) . PHP_EOL, FILE_APPEND);
 	}
 	
 	/**
