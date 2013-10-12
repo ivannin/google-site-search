@@ -14,7 +14,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/search/gss/google-site-search.php"); 
 $search = new GSS(array( 
   'cseID' => '010715444785431631581:ec-hohtyejs', 
-  'cacheFolder' => $_SERVER["DOCUMENT_ROOT"].'../cache/', 
+  'cacheFolder' => $_SERVER["DOCUMENT_ROOT"].'/../cache/', 
   'logFolder' => FALSE, 
   'encoding' => 'windows-1251', 
   )); 
